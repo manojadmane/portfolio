@@ -42,16 +42,7 @@ window.onload = ()=>{
     }
 
 }
-window.addEventListener("load", () => {
 
-    setTimeout(() => {
-
-        document.getElementById("loader")
-        .classList.add("loader-hide");
-
-    },2500);
-
-});
 const topBtn = document.getElementById("topBtn");
 
 window.addEventListener("scroll", () => {
