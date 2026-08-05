@@ -3344,205 +3344,33 @@ body{
 }
 
 
+
+
 /* ===========================
-   EXPERIENCE SECTION
+   FOOTER
 =========================== */
 
-.journey-section{
-    padding:70px 20px;
+.footer{
+    padding:40px 20px;
+    text-align:center;
 }
 
-.journey-grid{
+.footer-container{
     display:grid;
     grid-template-columns:1fr;
     gap:25px;
 }
 
-.timeline-card{
-    width:100%;
-    padding:25px;
-    border-radius:22px;
+.footer-logo,
+.footer-social{
+    justify-content:center;
 }
 
-.timeline-card h3{
-    font-size:28px;
-    line-height:1.3;
-}
-
-.timeline-card h4{
-    font-size:20px;
-    margin:10px 0;
-}
-
-.timeline-card p{
-    font-size:16px;
-    line-height:1.8;
-}
-
-.timeline-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.timeline-tags span{
-    padding:8px 14px;
-    font-size:14px;
-    border-radius:20px;
-}
-/* ===========================
-   PROJECTS SECTION
-=========================== */
-
-.projects-section{
-    padding:70px 20px;
-}
-
-.project-container{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:25px;
-}
-
-.project-card{
-    width:100%;
-    padding:22px;
-    border-radius:20px;
-}
-
-.project-image img{
-    width:100%;
-    height:auto;
-    border-radius:15px;
-}
-
-.project-content h3{
-    font-size:24px;
-    margin:15px 0 10px;
-}
-
-.project-content p{
-    font-size:16px;
-    line-height:1.8;
-}
-
-.project-tech{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin:18px 0;
-}
-
-.project-tech span{
-    padding:8px 14px;
-    border-radius:20px;
-    font-size:14px;
-}
-
-.project-buttons{
+.footer-links{
     display:flex;
     flex-direction:column;
-    gap:15px;
+    gap:12px;
 }
-
-.project-buttons a{
-    width:100%;
-    text-align:center;
-}
-
-
-/* ===========================
-   SERVICES SECTION
-=========================== */
-
-.services-section{
-    padding:70px 20px;
-}
-
-.service-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:22px;
-}
-
-.service-card{
-    width:100%;
-    padding:25px;
-    border-radius:20px;
-}
-
-.service-card h3{
-    font-size:24px;
-    margin:15px 0;
-}
-
-.service-card p{
-    font-size:16px;
-    line-height:1.8;
-}
-/* ===========================
-   ABOUT SECTION
-=========================== */
-
-.about-section{
-    padding:70px 20px;
-}
-
-.about-container,
-.about-details{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:30px;
-}
-
-.about-image img{
-    width:100%;
-    max-width:320px;
-    margin:auto;
-    display:block;
-}
-
-.about-content{
-    text-align:center;
-}
-
-.about-content p{
-    font-size:16px;
-    line-height:1.8;
-}
-
-
-/* ===========================
-   CONTACT SECTION
-=========================== */
-
-.contact-section{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:30px;
-    padding:70px 20px;
-}
-
-.contact-info,
-.contact-form-box{
-    width:100%;
-}
-
-.contact-form-box{
-    padding:25px;
-}
-
-.contact-form-box input,
-.contact-form-box textarea{
-    width:100%;
-    font-size:16px;
-}
-
-.contact-form-box button{
-    width:100%;
-}
-
-
 
 
 /* ===========================
