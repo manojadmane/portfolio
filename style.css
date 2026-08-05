@@ -3288,90 +3288,9 @@ body{
     font-size:34px;
 }
 
-/* Footer */
-
-.footer{
-    text-align:center;
-}
-
-.footer-logo,
-.footer-social{
-    justify-content:center;
-}
 
 }
-/* ===========================
-   TOOLS & TECHNOLOGIES
-=========================== */
-
-.tools-section,
-.tech-section{
-    padding:70px 20px;
-}
-
-.tools-grid,
-.tech-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:20px;
-}
-
-.tool-card{
-    width:100%;
-    padding:25px;
-    border-radius:20px;
-}
-
-.tool-card h3{
-    font-size:24px;
-    margin-bottom:15px;
-}
-
-.tool-card .tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.tool-card .tags span{
-    font-size:14px;
-    padding:8px 12px;
-}
-.tool-card,
-.timeline-card{
-    width:100%;
-    max-width:100%;
-}
-
-
-
-
-/* ===========================
-   FOOTER
-=========================== */
-
-.footer{
-    padding:40px 20px;
-    text-align:center;
-}
-
-.footer-container{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:25px;
-}
-
-.footer-logo,
-.footer-social{
-    justify-content:center;
-}
-
-.footer-links{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-
+/
 
 /* ===========================
    COMMON FIXES
