@@ -3082,6 +3082,7 @@ footer{
 .btn:active{
     transform:scale(.96);
 }
+
 /* ===================================
    MOBILE RESPONSIVE
 =================================== */
@@ -3096,12 +3097,13 @@ body{
 /* Header */
 
 .header{
-    height:75px;
-    padding:0 20px;
     position:fixed;
-    width:100%;
     top:0;
     left:0;
+    width:100%;
+    height:75px;
+    padding:0 20px;
+    background:#fff;
     z-index:1000;
 }
 
@@ -3111,44 +3113,9 @@ body{
 
 .menu-toggle{
     display:block;
-    font-size:32px;
+    font-size:30px;
     cursor:pointer;
-}
-
-.hire-btn{
-    display:none;
-}
-.header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:75px;
-    padding:0 20px;
-    z-index:1000;
-    background:#fff;
-}
-
-.navbar{
-    position:fixed;
-    top:75px;
-    left:-100%;
-    width:100%;
-    background:#fff;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:25px;
-    padding:30px 0;
-    transition:.4s;
-}
-
-.navbar.active{
-    left:0;
-}
-
-.menu-toggle{
-    display:block;
+    color:#7C4DFF;
 }
 
 .hire-btn{
@@ -3177,9 +3144,11 @@ body{
     left:0;
 }
 
-/* ===========================
-   HERO MOBILE
-=========================== */
+.navbar a{
+    font-size:18px;
+}
+
+/* Hero */
 
 .hero{
     display:flex;
@@ -3187,8 +3156,8 @@ body{
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:100px 20px 60px;
-    gap:35px;
+    padding:120px 20px 60px;
+    gap:40px;
 }
 
 .hero-left,
@@ -3199,46 +3168,38 @@ body{
 
 .hero-image{
     width:280px;
-    max-width:90%;
+    height:auto;
     margin:auto;
 }
 
 .hero-image img{
     width:100%;
-    height:auto;
-    display:block;
     border-radius:25px;
 }
 
 .hero-badge{
     display:flex;
-    flex-wrap:wrap;
     justify-content:center;
-    gap:12px;
-    margin-bottom:20px;
+    flex-wrap:wrap;
+    gap:10px;
 }
 
 .hero-left h5{
     font-size:15px;
-    letter-spacing:2px;
 }
 
 .hero-left h1{
     font-size:42px;
-    line-height:1.15;
-    margin:10px 0;
+    line-height:1.2;
 }
 
 .hero-left h3{
     font-size:24px;
-    margin-bottom:15px;
 }
 
 .hero-left p{
     font-size:16px;
     line-height:1.8;
-    max-width:500px;
-    margin:auto;
 }
 
 .hero-btn{
@@ -3246,11 +3207,23 @@ body{
     flex-direction:column;
     align-items:center;
     gap:15px;
-    margin-top:25px;
 }
 
 .hero-btn a{
     width:230px;
+}
+
+/* Grid */
+
+.tools-grid,
+.skills-container,
+.feedback-container,
+.service-grid,
+.why-grid,
+.project-container,
+.journey-grid,
+.footer-container{
+    grid-template-columns:1fr;
 }
 
 /* Cards */
@@ -3265,62 +3238,40 @@ body{
     padding:25px;
 }
 
-/* Featured Project */
+/* Project */
 
 .project-buttons{
-    display:flex;
     flex-direction:column;
-    gap:15px;
 }
 
 .project-image img{
     width:100%;
-    height:auto;
 }
 
-/* Section Titles */
+/* Titles */
 
-.section-title h2,
 .section-heading h2,
+.section-title h2,
+.about-left h1,
 .services-hero h1,
-.contact-hero h1,
-.about-left h1{
+.contact-hero h1{
     font-size:34px;
 }
 
-
 }
-/
 
 /* ===========================
-   COMMON FIXES
+   SMALL MOBILE
 =========================== */
 
-section{
-    overflow:hidden;
-}
-
-img{
-    max-width:100%;
-    height:auto;
-}
-
-.container{
-    width:100%;
-    padding:0 20px;
-}
-
-h1{
-    word-break:break-word;
-}
-
-html{
-    scroll-behavior:smooth;
-}
 @media (max-width:480px){
 
+.logo{
+    font-size:22px;
+}
+
 .hero-image{
-    width:230px;
+    width:220px;
 }
 
 .hero-left h1{
@@ -3335,74 +3286,77 @@ html{
     font-size:15px;
 }
 
-.logo{
-    font-size:22px;
-}
-
-.section-title h2,
-.section-heading h2{
-    font-size:28px;
-}
-
 .hero-btn a{
     width:100%;
     max-width:220px;
 }
 
+.section-heading h2,
+.section-title h2{
+    font-size:28px;
 }
+
+}
+
 /* ===========================
-      DARK MODE
+   COMMON FIXES
+=========================== */
+
+section{
+    overflow:hidden;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ===========================
+   DARK MODE
 =========================== */
 
 .theme-btn{
-    width:48px;
-    height:48px;
+    width:50px;
+    height:50px;
     border:none;
     border-radius:50%;
-    background:#f3f3f3;
+    background:#7C4DFF;
+    color:#fff;
+    font-size:22px;
     cursor:pointer;
-    font-size:20px;
-    color:#6C4CF1;
     transition:.35s;
 }
 
 .theme-btn:hover{
-    transform:rotate(180deg);
-    background:#6C4CF1;
-    color:#fff;
+    transform:rotate(180deg) scale(1.05);
 }
 
 /* Dark Theme */
 
 body.dark{
-
     background:#0f172a;
     color:#fff;
-
 }
 
 body.dark .header{
-
     background:#111827;
-
 }
 
-body.dark .navbar a{
-
-    color:#fff;
-
+body.dark .navbar{
+    background:#111827;
 }
 
+body.dark .navbar a,
 body.dark .logo{
-
     color:#fff;
-
 }
 
 body.dark .hero-left p{
-
     color:#d1d5db;
-
 }
 
 body.dark .tool-card,
@@ -3412,29 +3366,21 @@ body.dark .feedback-left,
 body.dark .feedback-right,
 body.dark .project-container,
 body.dark .footer{
-
     background:#1e293b;
     color:#fff;
-
 }
 
 body.dark .tool-item{
-
     background:#334155;
     color:#fff;
-
 }
 
 body.dark .btn2{
-
-    border-color:#fff;
+    border:2px solid #fff;
     color:#fff;
-
 }
 
 body.dark .btn2:hover{
-
     background:#fff;
-    color:#111;
-
+    color:#111827;
 }
