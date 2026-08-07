@@ -64,4 +64,32 @@ topBtn.addEventListener("click", () => {
 
 });
 
+const feedbackForm = document.getElementById("feedbackForm");
 
+feedbackForm.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",{
+
+        from_name: document.getElementById("name").value,
+
+        from_email: document.getElementById("email").value,
+
+        subject: document.getElementById("subject").value,
+
+        message: document.getElementById("message").value
+
+    }).then(() => {
+
+        alert("✅ Message Sent Successfully!");
+
+        feedbackForm.reset();
+
+    }).catch(() => {
+
+        alert("❌ Failed to send message!");
+
+    });
+
+});
