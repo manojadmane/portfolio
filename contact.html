@@ -297,58 +297,200 @@
 
 
 <!-- CONTACT PAGE END -->
- <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  serverTimestamp
-} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCC2IInPZKUun5Fg6HoYAxRukIES_omCwQ",
-  authDomain: "portfolio-feedback-6af0b.firebaseapp.com",
-  projectId: "portfolio-feedback-6af0b",
-  storageBucket: "portfolio-feedback-6af0b.firebasestorage.app",
-  messagingSenderId: "681038138528",
-  appId: "1:681038138528:web:b84e0a1962ddb56e1acdc5",
-  measurementId: "G-YHDEZ3F7HB"
-};
+<!-- ================= FIREBASE + EMAILJS ================= -->
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const form = document.getElementById("feedbackForm");
-
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    try {
-        await addDoc(collection(db, "feedbacks"), {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            subject: document.getElementById("subject").value,
-            feedback: document.getElementById("message").value,
-            createdAt: serverTimestamp()
-        });
-
-        alert("✅ Feedback Sent Successfully!");
-
-        form.reset();
-
-    } catch (error) {
-        alert("❌ Error: " + error.message);
-        console.log(error);
-    }
-});
-</script>
-
+<!-- EmailJS Library -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<script>
-emailjs.init("guwQlU2LCfTfM_pqy");
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
+
+
+// ================= FIREBASE CONFIG =================
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyCC2IInPZKUun5Fg6HoYAxRukIES_omCwQ",
+
+    authDomain: "portfolio-feedback-6af0b.firebaseapp.com",
+
+    projectId: "portfolio-feedback-6af0b",
+
+    storageBucket: "portfolio-feedback-6af0b.firebasestorage.app",
+
+    messagingSenderId: "681038138528",
+
+    appId: "1:681038138528:web:b84e0a1962ddb56e1acdc5",
+
+    measurementId: "G-YHDEZ3F7HB"
+};
+
+
+// Initialize Firebase
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+
+// ================= EMAILJS CONFIG =================
+
+// Your EmailJS Public Key
+
+emailjs.init({
+    publicKey: "guwQlU2LCfTfM_pqy"
+});
+
+
+// ⚠️ CHANGE THESE TWO VALUES
+
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+
+
+// ================= CONTACT FORM =================
+
+const form = document.getElementById("feedbackForm");
+
+
+if (form) {
+
+    form.addEventListener("submit", async (e) => {
+
+        e.preventDefault();
+
+
+        // Get form values
+
+        const name = document.getElementById("name").value.trim();
+
+        const email = document.getElementById("email").value.trim();
+
+        const subject = document.getElementById("subject").value.trim();
+
+        const message = document.getElementById("message").value.trim();
+
+
+        // Check values
+
+        if (!name || !email || !message) {
+
+            alert("⚠️ Please fill all required fields.");
+
+            return;
+        }
+
+
+        // Disable button while sending
+
+        const button = form.querySelector("button[type='submit']");
+
+        const originalText = button.innerHTML;
+
+        button.disabled = true;
+
+        button.innerHTML = "Sending...";
+
+
+        try {
+
+
+            // ==========================================
+            // 1. SAVE MESSAGE TO FIREBASE
+            // ==========================================
+
+            await addDoc(collection(db, "feedbacks"), {
+
+                name: name,
+
+                email: email,
+
+                subject: subject,
+
+                feedback: message,
+
+                createdAt: serverTimestamp()
+
+            });
+
+
+            // ==========================================
+            // 2. SEND EMAIL USING EMAILJS
+            // ==========================================
+
+            await emailjs.send(
+
+                EMAILJS_SERVICE_ID,
+
+                EMAILJS_TEMPLATE_ID,
+
+                {
+
+                    name: name,
+
+                    email: email,
+
+                    subject: subject,
+
+                    message: message
+
+                }
+
+            );
+
+
+            // ==========================================
+            // SUCCESS
+            // ==========================================
+
+            alert("✅ Message sent successfully!");
+
+            form.reset();
+
+
+        } catch (error) {
+
+
+            console.error("Error:", error);
+
+
+            alert(
+
+                "❌ Something went wrong.\n\n" +
+
+                error.message
+
+            );
+
+
+        } finally {
+
+
+            // Enable button again
+
+            button.disabled = false;
+
+            button.innerHTML = originalText;
+
+        }
+
+    });
+
+}
+
 </script>
 
+<!-- ================= END FIREBASE + EMAILJS ================= -->
 <script src="script.js"></script>
 
 </body>
