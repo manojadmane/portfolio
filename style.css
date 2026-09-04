@@ -1798,6 +1798,123 @@ padding-bottom: 30px; */
     color:#fff;
     transform:translateX(8px);
 }
+/* ================================
+   ABOUT RESPONSIVE
+================================ */
+
+@media (max-width: 992px) {
+
+    .about-hero {
+        gap: 40px;
+        padding: 120px 6% 70px;
+    }
+
+    .about-left h1 {
+        font-size: 50px;
+    }
+
+    .about-left h3 {
+        font-size: 26px;
+    }
+
+    .about-image {
+        width: 300px;
+        height: 380px;
+    }
+
+    .about-details {
+        grid-template-columns: 1fr;
+        padding: 60px 6%;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .about-hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 110px 5% 60px;
+    }
+
+    .about-left,
+    .about-right {
+        width: 100%;
+    }
+
+    .about-left h1 {
+        font-size: 42px;
+    }
+
+    .about-left h3 {
+        font-size: 23px;
+    }
+
+    .about-left p {
+        font-size: 15px;
+    }
+
+    .about-btn {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .about-image {
+        width: 270px;
+        height: 340px;
+    }
+
+    .about-details {
+        grid-template-columns: 1fr;
+        padding: 50px 5%;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .about-hero {
+        padding: 100px 20px 50px;
+        gap: 35px;
+    }
+
+    .about-left h1 {
+        font-size: 34px;
+    }
+
+    .about-left h3 {
+        font-size: 20px;
+    }
+
+    .about-left p {
+        font-size: 14px;
+    }
+
+    .about-btn {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-btn a {
+        width: 100%;
+        max-width: 240px;
+    }
+
+    .about-image {
+        width: 220px;
+        height: 280px;
+    }
+
+    .about-details {
+        padding: 40px 20px;
+    }
+
+    .story-card,
+    .expertise {
+        padding: 22px 18px;
+    }
+}
 /*==============================
         EDUCATION
 ==============================*/
