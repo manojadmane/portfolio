@@ -3577,12 +3577,7 @@ footer{
    SMALL MOBILE - 375px
 ========================================= */
 
-<<<<<<< HEAD
-@media (max-width: 425px) {
-=======
 @media (max-width: 400px) {
->>>>>>> e46da0e7363da2f2dfb8f7b34c64e718bc11fd80
-
     .header {
         padding: 12px 15px;
     }
