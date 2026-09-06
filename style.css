@@ -1524,7 +1524,7 @@ box-shadow:
 
 /*========== Responsive ==========*/
 
-@media(max-width:991px){
+@media(max-width:425px){
 
 .footer-container{
 grid-template-columns:1fr 1fr;
@@ -1721,6 +1721,8 @@ padding-bottom: 30px; */
 }
 
 .about-image{
+    width:360px;
+    height:450px;
     width:310px;
     height:400px;
     overflow:hidden;
@@ -1798,6 +1800,7 @@ padding-bottom: 30px; */
     color:#fff;
     transform:translateX(8px);
 }
+
 /* ================================
    ABOUT RESPONSIVE
 ================================ */
@@ -2056,7 +2059,7 @@ padding-bottom: 30px; */
 .css{width:90%;}
 .js{width:75%;}
 
-@media(max-width:768px){
+@media(max-width:425px){
 
 .skills-container{
 grid-template-columns:1fr;
@@ -2119,7 +2122,7 @@ grid-template-columns:1fr;
     opacity:.25;
 }
 
-@media(max-width:768px){
+@media(max-width:425px){
 
 .project-card{
     flex-direction:column;
@@ -2256,7 +2259,7 @@ grid-template-columns:1fr;
     font-weight:500;
 }
 
-@media(max-width:768px){
+@media(max-width:425px){
 
 .quick-stats{
     grid-template-columns:repeat(2,1fr);
@@ -3574,7 +3577,11 @@ footer{
    SMALL MOBILE - 375px
 ========================================= */
 
+<<<<<<< HEAD
+@media (max-width: 425px) {
+=======
 @media (max-width: 400px) {
+>>>>>>> e46da0e7363da2f2dfb8f7b34c64e718bc11fd80
 
     .header {
         padding: 12px 15px;
